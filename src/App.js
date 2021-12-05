@@ -85,10 +85,10 @@ export const StyledImg = styled.img`
   border-radius: 100%;
   width: 200px;
   @media (min-width: 900px) {
-    width: 300px;
+    width: 225px;
   }
   @media (min-width: 1000px) {
-    width: 300px;
+    width: 225px;
   }
   transition: width 0.5s;
 `;
@@ -133,6 +133,7 @@ function App() {
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
+    // set mint parameters & find lowest token id
     blockchain.smartContract.methods
       .mint(mintAmount)
       .send({
@@ -205,21 +206,24 @@ function App() {
         style={{ padding: 24, backgroundColor: "var(--primary)" }}
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
-        <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
+        <StyledLogo alt={"logo"} src={"/config/images/logo.png"} style = {{
+          width: 300,
+          height: 300
+        }}/>
         <s.SpacerSmall />
         <span>
         &nbsp;&nbsp;&nbsp;<a href="https://www.twitter.com">
-        <img src={twitterlogo} alt="Logo" style = {{
+        <img src={twitterlogo} alt="twitterlogo" style = {{
           width: 25,
           height: 25
         }}/></a>   
         &nbsp;&nbsp;<a href="https://www.discord.com">
-        <img src={discordlogo} alt="Logo" style = {{
+        <img src={discordlogo} alt="discordlogo" style = {{
           width: 25,
-          height: 25
+          height: 30
         }}/></a>   
         &nbsp;&nbsp;&nbsp;<a href="https://www.opensea.com">
-        <img src={opensealogo} alt="Logo" style = {{
+        <img src={opensealogo} alt="opensealogo" style = {{
           width: 25,
           height: 25
         }}/></a>
