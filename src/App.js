@@ -4,6 +4,10 @@ import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
+//logos
+import twitterlogo from './logos/twitterlogo.png';
+import discordlogo from './logos/discordlogo.png';
+import opensealogo from './logos/opensealogo.png';
 
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
@@ -203,6 +207,23 @@ function App() {
       >
         <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
         <s.SpacerSmall />
+        <span>
+        &nbsp;&nbsp;&nbsp;<a href="https://www.twitter.com">
+        <img src={twitterlogo} alt="Logo" style = {{
+          width: 25,
+          height: 25
+        }}/></a>   
+        &nbsp;&nbsp;<a href="https://www.discord.com">
+        <img src={discordlogo} alt="Logo" style = {{
+          width: 25,
+          height: 25
+        }}/></a>   
+        &nbsp;&nbsp;&nbsp;<a href="https://www.opensea.com">
+        <img src={opensealogo} alt="Logo" style = {{
+          width: 25,
+          height: 25
+        }}/></a>
+        </span>
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
             <StyledImg alt={"example"} src={"/config/images/example.gif"} />
